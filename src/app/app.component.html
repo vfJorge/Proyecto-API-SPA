@@ -12,10 +12,10 @@
     <nav class="navbar navbar-expand navbar-dark bg-info">
       <div class="container-fluid">
         <div class="col-2">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="app.component.html">Logo</a>
         </div>
         <div class="col">
-          <a class="nav-link" href="#">Servicio1</a>
+          <a class="nav-link" href="#">Validar Email</a>
         </div>
         <div class="col">
           <a class="nav-link" href="#">Servicio2</a>
@@ -30,10 +30,24 @@
           <a class="nav-link" href="#">Servicio5</a>
         </div>
         <div class="col">
+          <a class="nav-link" href="#">Servicio5</a>
+        </div>
+        <div class="col">
           <a class="nav-link" href="#">Login</a>
         </div>
       </div>
     </nav>
+    <div class="container">
+      <div class="row">
+        <h3>Resultado de API</h3>
+      </div>
+      <div class="row">
+        <input type="text" required #emailInput/>
+        <button (click)="sendEmail(emailInput.value)">Send</button>
+        <p *ngIf="validacionEmail.disposable==true">El email no es válido</p>
+        <p *ngIf="validacionEmail.disposable==false">El email es válido</p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
