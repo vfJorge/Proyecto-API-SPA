@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
-import { ValidaremailService } from './services/validaremail.service';
+import { Component, OnInit } from '@angular/core';
+import { ValidaremailService } from '../services/validaremail.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-api1',
+  templateUrl: './api1.component.html',
+  styleUrls: ['./api1.component.scss']
 })
-export class AppComponent {
-  title = 'api_project';
+export class Api1Component implements OnInit {
 
   public validacionEmail: any;
 
@@ -20,4 +19,8 @@ export class AppComponent {
       this.validacionEmail=resp
     })
   }
+
+  ngOnInit(): void {
+  }
+
 }
