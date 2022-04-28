@@ -12,10 +12,11 @@
     <nav class="navbar navbar-expand navbar-dark bg-info">
       <div class="container-fluid">
         <div class="col-2">
-          <a class="navbar-brand" href="app.component.html">Logo</a>
+          <a class="navbar-brand" routerLink="/menu">Logo</a>
         </div>
         <div class="col">
-          <a class="nav-link" href="#">Validar Email</a>
+          <!-- <a class="nav-link" (click)="router.navigate(['/api1',api1.value]);">Validar Email</a> -->
+          <a class="nav-link" routerLink="/api1">Validar Email</a>
         </div>
         <div class="col">
           <a class="nav-link" href="#">Servicio2</a>
@@ -37,17 +38,8 @@
         </div>
       </div>
     </nav>
-    <div class="container">
-      <div class="row">
-        <h3>Resultado de API</h3>
-      </div>
-      <div class="row">
-        <input type="text" required #emailInput/>
-        <button (click)="sendEmail(emailInput.value)">Send</button>
-        <p *ngIf="validacionEmail.disposable==true">El email no es válido</p>
-        <p *ngIf="validacionEmail.disposable==false">El email es válido</p>
-      </div>
-    </div>
+    <router-outlet></router-outlet>
   </div>
+
 </body>
 </html>

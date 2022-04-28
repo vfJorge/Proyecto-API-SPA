@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <h3>Resultado de API</h3>
+  </div>
+  <div class="row">
+    <input type="text" required #emailInput/>
+    <button (click)="sendEmail(emailInput.value)">Send</button>
+    <p *ngIf="validacionEmail.disposable==true">El email no es válido</p>
+    <p *ngIf="validacionEmail.disposable==false">El email es válido</p>
+  </div>
+</div>
