@@ -7,14 +7,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { Api1Component } from './api1/api1.component';
-import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     Api1Component,
-    InicioComponent
   ],
   imports: [
     BrowserModule,
