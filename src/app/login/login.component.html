@@ -1,0 +1,26 @@
+<div class="offcanvas-body py-0 text-left">
+  <form action=#>
+      <div class="mb-3 mt-3">
+          <label for="email" class="form-label">Correo:</label>
+          <input type="email" class="form-control" placeholder="Correo" #email>
+      </div>
+      <div class="mb-3">
+          <label for="pwd" class="form-label">Contraseña:</label>
+          <input type="password" class="form-control" placeholder="Contraseña" #pwd>
+      </div>
+      <div class="form-check mb-3">
+          <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember"> Recordarme
+          </label>
+      </div>
+      <div class="d-grid">
+          <button class="my-2 p-2 btn-primary btn-block text-center" (click)="userAuth(email.value, pwd.value)" >INICIAR SESIÓN</button>
+      </div>
+  </form>
+  <div class="d-flex justify-content-center align-items-center text-center">
+      <p class="text-muted my-3 mx-2">¿No tienes una cuenta?</p>
+      <a class="my-3 mx-2 text-decoration-underline" data-bs-toggle="modal" data-bs-target="#registerModal">Crea una</a>
+      <p *ngIf="validacionAuth==true">¡Bienvenido a la aplicación!</p>
+      <p *ngIf="validacionAuth==false">Lo sentimos, los datos son incorrectos</p>
+  </div>
+</div>

@@ -1,2 +1,2 @@
 Documento de texto para referenciar rama de front-end.
-Desarrollo de spa en progreso...
+Login en desarrollo
