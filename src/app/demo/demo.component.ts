@@ -4,12 +4,12 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { NzFormTooltipIcon } from 'ng-zorro-antd/form';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
-})
-export class RegisterComponent implements OnInit {
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
 
+  styleUrls: ['./demo.component.css']
+})
+export class DemoComponent implements OnInit {
   validateForm!: FormGroup;
   captchaTooltipIcon: NzFormTooltipIcon = {
     type: 'info-circle',
@@ -47,8 +47,7 @@ export class RegisterComponent implements OnInit {
     e.preventDefault();
   }
 
-
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
@@ -63,5 +62,4 @@ export class RegisterComponent implements OnInit {
       agree: [false]
     });
   }
-
 }
