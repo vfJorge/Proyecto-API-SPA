@@ -11,7 +11,6 @@ export class Api1Component implements OnInit {
   public validacionEmail: any;
 
   constructor(private validaremailService: ValidaremailService){
-    // Revisar si es necesario poner el validaremailService en el método del constructor
   }
 
   sendEmail(emailResp: string){
