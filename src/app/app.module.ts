@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Api3Component } from './api3/api3.component';
 import { FilterMangaPipe } from './Pipes/filter-manga.pipe';
 import { Api4Component } from './api4/api4.component';
+import { Api5Component } from './api5/api5.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,15 @@ import { Api4Component } from './api4/api4.component';
     Api3Component,
     FilterMangaPipe,
     Api4Component,
+    Api5Component,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimesService } from '../services/animes.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-api4',
@@ -12,15 +13,17 @@ export class Api4Component implements OnInit {
   public AnimesRecibidos: Array<any> = [];
   
 
-  constructor(private animesService: AnimesService){
+  constructor(private animesService: AnimesService, private http: HttpClient){
     this.animesService.getAnimes().subscribe((resp: any) => {
-    console.log(resp);
     this.AnimesRecibidos = resp.data;
   })
   }
 
 
   ngOnInit(): void {
+    this.http.post<any>('https://reqres.in/api/posts', { title: 'Angular POST Request Example' }).subscribe(data => {
+        
+    })
   }
 
 }

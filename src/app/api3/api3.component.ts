@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MangasService } from '../services/mangas.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-api3',
@@ -12,7 +13,7 @@ export class Api3Component implements OnInit {
   public MangasRecibidos: Array<any> = [];
   
 
-  constructor(private mangasService: MangasService){
+  constructor(private mangasService: MangasService, private http: HttpClient){
     this.mangasService.getMangas().subscribe((resp: any) => {
     this.MangasRecibidos = resp.data;
   })

@@ -12,11 +12,14 @@ export class FilterPipe implements PipeTransform {
 
     const ComicsRecibidos = [];
     for(const Comic of value){
-      if(Comic.title.toLowerCase().indexOf(filterString.toLowerCase()) > -1){
+      if(Comic.title.toLowerCase() === (filterString.toLowerCase() || Comic.format.toLowerCase() === filterString.toLowerCase()) || Comic.title.toLowerCase().indexOf(filterString.toLowerCase()) > -1){
         ComicsRecibidos.push(Comic)
       }
-      if(Comic.format.toLowerCase() === filterString.toLowerCase()){
-        ComicsRecibidos.push(Comic)
+
+      for(const character of Comic.characters.items){
+        if(character.name.toLowerCase() === (filterString.toLowerCase()) || character.name.toLowerCase().indexOf(filterString.toLowerCase()) > -1){
+          ComicsRecibidos.push(Comic)
+        }
       }
     }
     return ComicsRecibidos;

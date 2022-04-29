@@ -12,7 +12,7 @@ export class FilterMangaPipe implements PipeTransform {
 
     const MangasRecibidos = [];
     for(const Manga of value){
-      if(Manga.node.title.toLowerCase().indexOf(filterString.toLowerCase()) > -1){
+      if(Manga.node.title.toLowerCase().indexOf(filterString.toLowerCase()) > -1 || Manga.node.title.toLowerCase() === filterString.toLowerCase()){
         MangasRecibidos.push(Manga)
       }
     }

@@ -15,7 +15,6 @@ export class Api2Component implements OnInit {
 
   constructor(private comicsService: ComicsService){
     this.comicsService.getComics().subscribe((resp: any) => {
-    console.log(resp)
     this.ComicsRecibidos = resp.data.results;
   })
   }
