@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NzModalFooterComponent, NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
+import { RegisterComponent } from './register/register.component';
 
 @Component({
   selector: 'app-root',
@@ -15,13 +17,18 @@ export class AppComponent {
   public isVisible = false;
   isConfirmLoading = false;
 
-  constructor( router: Router){
+  constructor( router: Router, private modalService: NzModalService){
   }
 
   showModal(): void {
     this.isVisible = true;
-    this.modalTitleString = 'Login';
-    this.modalInterior = '<router-outlet><app-login></app-login></router-outlet>';
+  }
+  openRegisterModal() :void {
+    this.closeModal();
+    this.modalService.create({
+      nzTitle: 'Registro',
+      nzContent: RegisterComponent
+    });
   }
 
   handleOk(): void {
@@ -32,7 +39,7 @@ export class AppComponent {
     }, 1000);
   }
 
-  public closeModal(): void {
+  closeModal(): void {
     this.isVisible = false;
   }
 }

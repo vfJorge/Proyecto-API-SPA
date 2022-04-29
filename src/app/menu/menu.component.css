@@ -1,10 +1,30 @@
 #main-div{
   background-color: white;
-  padding: 20px;
+  padding: 0.5%;
+
 }
 
 #inner-div{
-  background-image: url(src\assets\669.jpg);
-  height: auto;
-  width: auto ;
+  background-color: rgba(247, 244, 244, 0.87);
+  background-blend-mode:color-dodge;
+  background-size: cover;
+  height: 100vh;
+  width: auto;
+  position: relative;
+  text-align: center;
 }
+
+#inner-div > h2{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+#JaimitoMenu{
+  height: 86px;
+  width: 274px;
+}
+
