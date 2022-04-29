@@ -1,0 +1,27 @@
+<div class="container">
+    <br>
+      <div class="row">
+        <h3 class="text-center">Top 100 Animes</h3>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <input type="text" class="form-control" [(ngModel)]="filteredString"/>
+        </div>
+      </div>
+  <br><br>
+        <div class="row">
+          <div class="col-sm-2" *ngFor="let Anime of AnimesRecibidos  | filterManga:filteredString | paginate: { itemsPerPage: 18, currentPage: page }">
+              <div class="card">
+                <img src= {{Anime.node.main_picture.medium}}>
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{Anime.node.title}}</h5>
+                </div>
+            </div>
+            <br>
+          </div>
+        </div>
+        <pagination-controls (pageChange)="page = $event" previousLabel="Anterior"
+        nextLabel="Siguiente" class="text-center"></pagination-controls>
+  </div>
+    
