@@ -19,6 +19,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import {NzInputModule} from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 registerLocaleData(en);
 
@@ -40,7 +41,8 @@ registerLocaleData(en);
     NzInputModule,
     NzSelectModule,
     ReactiveFormsModule,
-    NzButtonModule
+    NzButtonModule,
+    NzModalModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

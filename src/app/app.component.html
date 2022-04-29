@@ -8,38 +8,53 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <nav class="navbar navbar-expand navbar-dark bg-info">
-      <div class="container-fluid">
-        <div class="col-2">
-          <a class="navbar-brand" routerLink="/menu">Logo</a>
-        </div>
-        <div class="col">
-          <!-- <a class="nav-link" (click)="router.navigate(['/api1',api1.value]);">Validar Email</a> -->
-          <a class="nav-link" routerLink="/api1">Validar Email</a>
-        </div>
-        <div class="col">
-          <a class="nav-link" href="#">Servicio2</a>
-        </div>
-        <div class="col">
-          <a class="nav-link" href="#">Servicio3</a>
-        </div>
-        <div class="col">
-          <a class="nav-link" href="#">Servicio4</a>
-        </div>
-        <div class="col">
-          <a class="nav-link" href="#">Servicio5</a>
-        </div>
-        <div class="col">
-          <a class="nav-link" href="#">Servicio5</a>
-        </div>
-        <div class="col">
-          <a class="nav-link" routerLink="/login">Login</a>
-        </div>
+  <nav class="navbar navbar-expand navbar-dark bg-info">
+    <div class="container-fluid">
+      <div class="col-2">
+        <a class="navbar-brand" routerLink="/menu"><img src="./assets/Logo1.png" alt=""></a>
       </div>
-    </nav>
-    <router-outlet></router-outlet>
-  </div>
+      <div class="col">
+        <a class="nav-link" routerLink="/api1">Validar Email</a>
+      </div>
+      <div class="col">
+        <a class="nav-link" href="#">Servicio2</a>
+      </div>
+      <div class="col">
+        <a class="nav-link" href="#">Servicio3</a>
+      </div>
+      <div class="col">
+        <a class="nav-link" href="#">Servicio4</a>
+      </div>
+      <div class="col">
+        <a class="nav-link" href="#">Servicio5</a>
+      </div>
+      <div class="col">
+        <a class="nav-link" href="#">Servicio5</a>
+      </div>
+      <div class="col">
+        <a class="nav-link" (click)="showModal()">Login</a>
+      </div>
+    </div>
+  </nav>
+  <nz-modal
+      [(nzVisible)]="isVisible"
+      [nzTitle]="modalTitle"
+      [nzContent]="modalContent"
+      [nzFooter]="modalFooter"
+      (nzOnCancel)="handleCancel()"
+    >
+      <ng-template #modalTitle>Login</ng-template>
+
+      <ng-template #modalContent>
+        <app-login></app-login>
+      </ng-template>
+
+      <ng-template #modalFooter>
+        <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
+        <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading">Login</button>
+      </ng-template>
+    </nz-modal>
+  <router-outlet></router-outlet>
 
 </body>
 </html>

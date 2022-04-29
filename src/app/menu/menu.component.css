@@ -1,0 +1,10 @@
+#main-div{
+  background-color: white;
+  padding: 20px;
+}
+
+#inner-div{
+  background-image: url(src\assets\669.jpg);
+  height: auto;
+  width: auto ;
+}

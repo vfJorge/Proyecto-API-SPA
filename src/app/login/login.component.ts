@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,16 +9,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 
 export class LoginComponent implements OnInit {
+
+  isVisible = false;
+  isConfirmLoading = false;
   validateForm!: FormGroup;
 
-  public validacionAuth: any;
-
   constructor(private fb: FormBuilder) { }
-
-  usuario = {
-    email: "gatitosLover33@hotmail.com",
-    password: "gatito33"
-  }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
@@ -25,14 +22,6 @@ export class LoginComponent implements OnInit {
       password: [null, [Validators.required]],
       remember: [true]
     });
-  }
-
-  userAuth(inputEmail: String, inputPwd: String){
-    if(inputEmail === this.usuario.email && inputPwd === this.usuario.password){
-      this.validacionAuth = true;
-    }else{
-      this.validacionAuth = false;
-    }
   }
 
   submitForm(): void {
