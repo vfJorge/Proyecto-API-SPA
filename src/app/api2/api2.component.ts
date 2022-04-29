@@ -8,7 +8,8 @@ import { ComicsService } from '../services/comics.service';
   styleUrls: ['./api2.component.css']
 })
 export class Api2Component implements OnInit {
-
+  filteredString: string = '';
+  public page: number = 1;
   public ComicsRecibidos: Array<any> = [];
   public ImagenesComics: String = "/portrait_fantastic.jpg";
   
