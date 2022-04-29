@@ -16,6 +16,20 @@ export class RegisterComponent implements OnInit {
     theme: 'twotone'
   };
 
+  ngOnInit(): void {
+    this.validateForm = this.fb.group({
+      email: [null, [Validators.email, Validators.required]],
+      password: [null, [Validators.required]],
+      checkPassword: [null, [Validators.required, this.confirmationValidator]],
+      nickname: [null, [Validators.required]],
+      phoneNumberPrefix: ['+86'],
+      phoneNumber: [null, [Validators.required]],
+      website: [null, [Validators.required]],
+      captcha: [null, [Validators.required]],
+      agree: [false]
+    });
+  }
+
   submitForm(): void {
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
@@ -50,18 +64,6 @@ export class RegisterComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit(): void {
-    this.validateForm = this.fb.group({
-      email: [null, [Validators.email, Validators.required]],
-      password: [null, [Validators.required]],
-      checkPassword: [null, [Validators.required, this.confirmationValidator]],
-      nickname: [null, [Validators.required]],
-      phoneNumberPrefix: ['+86'],
-      phoneNumber: [null, [Validators.required]],
-      website: [null, [Validators.required]],
-      captcha: [null, [Validators.required]],
-      agree: [false]
-    });
-  }
+
 
 }
