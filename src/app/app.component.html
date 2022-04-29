@@ -41,17 +41,16 @@
       [nzTitle]="modalTitle"
       [nzContent]="modalContent"
       [nzFooter]="modalFooter"
-      (nzOnCancel)="handleCancel()"
+      (nzOnCancel)="closeModal()"
     >
-      <ng-template #modalTitle>Login</ng-template>
+      <ng-template #modalTitle>{{modalTitleString}}</ng-template>
 
       <ng-template #modalContent>
         <app-login></app-login>
       </ng-template>
 
       <ng-template #modalFooter>
-        <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
-        <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading">Login</button>
+        <button nz-button nzType="default" (click)="closeModal()">Go back</button>
       </ng-template>
     </nz-modal>
   <router-outlet></router-outlet>

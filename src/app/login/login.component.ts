@@ -10,8 +10,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class LoginComponent implements OnInit {
 
-  isVisible = false;
-  isConfirmLoading = false;
   validateForm!: FormGroup;
 
   constructor(private fb: FormBuilder) { }

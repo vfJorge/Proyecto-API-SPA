@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NzFormModule } from 'ng-zorro-antd/form';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,11 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 })
 export class AppComponent {
   title = 'api_project';
-  isVisible = false;
+  modalInterior = '';
+  modalTitleString = '';
+  comment = "<p><em><strong>abc</strong></em></p>";
+
+  public isVisible = false;
   isConfirmLoading = false;
 
   constructor( router: Router){
@@ -17,6 +20,8 @@ export class AppComponent {
 
   showModal(): void {
     this.isVisible = true;
+    this.modalTitleString = 'Login';
+    this.modalInterior = '<router-outlet><app-login></app-login></router-outlet>';
   }
 
   handleOk(): void {
@@ -27,7 +32,7 @@ export class AppComponent {
     }, 1000);
   }
 
-  handleCancel(): void {
+  public closeModal(): void {
     this.isVisible = false;
   }
 }
