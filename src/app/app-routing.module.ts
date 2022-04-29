@@ -7,6 +7,9 @@ import { Api3Component } from './api3/api3.component';
 import { Api4Component } from './api4/api4.component';
 import { Api5Component } from './api5/api5.component';
 
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+
 const routes: Routes = [
   {path: 'menu', component:MenuComponent},
   {path: 'api1', component:Api1Component},
@@ -14,6 +17,8 @@ const routes: Routes = [
   {path: 'api3', component:Api3Component},
   {path: 'api4', component:Api4Component},
   {path: 'api5', component:Api5Component},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component:RegisterComponent},
   {path: '', redirectTo:'/menu', pathMatch: 'full'}
 ];
 
