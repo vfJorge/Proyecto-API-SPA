@@ -1,2 +1,0 @@
-Documento de texto para referenciar rama de front-end.
-Login en desarrollo

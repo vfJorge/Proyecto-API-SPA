@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ValidaremailService } from '../services/validaremail.service';
 
 @Component({
@@ -8,9 +9,17 @@ import { ValidaremailService } from '../services/validaremail.service';
 })
 export class Api1Component implements OnInit {
 
+  mail!: FormGroup;
   public validacionEmail: any;
 
-  constructor(private validaremailService: ValidaremailService){
+  constructor(private validaremailService: ValidaremailService, private fb: FormBuilder){
+    
+  }
+
+  ngOnInit(): void {
+    this.mail = this.fb.group({
+      correoEmail: new FormControl('', [Validators.required, Validators.email])
+    })
   }
 
   sendEmail(emailResp: string){
@@ -19,7 +28,5 @@ export class Api1Component implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
 
 }
