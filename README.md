@@ -9,8 +9,8 @@ Para poder visualizar la página basta con un correr la línea "ng serve" en la 
 En caso de que no tengas alguna dependencia entonces corre la línea "npm install" y vuelve a intentar servir la aplicación.
 
 # Integrantes del equipo
-Jorge Martín Vázquez Flores
-Rodrigo Urtecho Quintal
-Rodrigo Jesús Pantoja Vázquez
-Eduardo Leonel Echeverría León
+Jorge Martín Vázquez Flores <br>
+Rodrigo Urtecho Quintal <br>
+Rodrigo Jesús Pantoja Vázquez <br>
+Eduardo Leonel Echeverría León <br>
 David de Jesús Ávila Pacheco
