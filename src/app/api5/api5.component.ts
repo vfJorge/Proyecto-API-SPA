@@ -11,11 +11,11 @@ export class Api5Component implements OnInit {
 
   datosEmail!: FormGroup;
 
-  constructor(private enviaremailService: EnviaremailService, private builder: FormBuilder){
+  constructor(private enviaremailService: EnviaremailService, private fb: FormBuilder){
   }
 
   ngOnInit(): void {
-    this.datosEmail = this.builder.group({
+    this.datosEmail = this.fb.group({
       nombreCompleto: new FormControl('', [Validators.required]),
       correo: new FormControl('', [Validators.required, Validators.email]),
       comentarios: new FormControl('', [Validators.required])

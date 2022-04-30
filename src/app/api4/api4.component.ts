@@ -26,4 +26,22 @@ export class Api4Component implements OnInit {
     })
   }
 
+  public isVisible = false;
+  isConfirmLoading = false;
+
+  showModal(): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    this.isConfirmLoading = true;
+    setTimeout(() => {
+      this.isVisible = false;
+      this.isConfirmLoading = false;
+    }, 1000);
+  }
+
+  closeModal(): void {
+    this.isVisible = false;
+  }
 }

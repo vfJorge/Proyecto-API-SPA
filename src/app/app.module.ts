@@ -29,6 +29,7 @@ import {NzInputModule} from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { WIPComponent } from './wip/wip.component';
 
 registerLocaleData(en);
 
@@ -45,6 +46,7 @@ registerLocaleData(en);
     FilterMangaPipe,
     Api4Component,
     Api5Component,
+    WIPComponent,
   ],
   imports: [
     BrowserModule,
